@@ -1,0 +1,18 @@
+name = "iptv-manager"
+main = "index.js"
+compatibility_date = "2024-01-01"
+
+# Durable Object binding
+[[durable_objects.bindings]]
+name = "IPTV_DATABASE"
+class_name = "IPTVDatabase"
+
+# KV Namespace para armazenar a playlist M3U (opcional)
+[[kv_namespaces]]
+binding = "PLAYLIST_KV"
+id = "fc82d892071240918b0f7199b8b7afba"
+
+# Migrations para Durable Objects
+[[migrations]]
+tag = "v1"
+new_classes = ["IPTVDatabase"]
